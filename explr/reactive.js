@@ -54,22 +54,22 @@ var hourDim = ndx.dimension(function(d){ return d.localHour; }),
     cityDim = ndx.dimension(function(d){ return d.city; }),
     convDim = ndx.dimension(function(d) { return d.convSteps; });
 
-// Counts of bookings
+// Counts of visits
 var hourlyTotal = hourDim.group().reduceSum(function(d) { return d.count; }),
     trafficTotal = trafficDim.group().reduceSum(function(d) { return d.count; }),
     cityTotal = cityDim.group().reduceSum(function(d) { return d.count; });
 
-// Count of party size 
+// Count of pages per visit 
 var partyTotal = convDim.group().reduceSum(function(d) { return d.count; });
 
 // Margins
 var marginSetting = {top: 20, right: 10, bottom: 40, left: 40};
 
 /* 
- * Local hourly reservations
+ * Local hourly visits
  */
 
-// Demand chart
+// Visits chart
 innerCharts.hourlyChart = dc.lineChart('#line');
 
 innerCharts.hourlyChart
@@ -85,13 +85,13 @@ innerCharts.hourlyChart
 innerCharts.hourlyChart.yAxis().tickFormat(d3.format('s'));
 
 /* 
- * Reservations from referrers
+ * Visits by source
  */
 
 // Coloration
 var colorScale = d3.scale.ordinal().range(['#a6cee3','#1f78b4','#b2df8a','#33a02c','#fb9a99','#e31a1c','#fdbf6f','#ff7f00','#cab2d6']);
 
-// Referrer chart
+// Source chart
 innerCharts.sourceChart = dc.pieChart('#pie');
 
 // Sizing variables
@@ -118,10 +118,10 @@ innerCharts.sourceChart
   .legend(dc.legend().gap(3));
 
 /* 
- * Reservations per restaurant
+ * Visits per city
  */
 
-// Restaurant chart
+// City chart
 innerCharts.cityChart = dc.rowChart('#row');
 
 // Sizing variables
@@ -149,10 +149,10 @@ innerCharts.cityChart
   .xAxis().ticks(4);
 
 /* 
- * Distribution of party size
+ * Distribution of pages per visit
  */
 
-// Party size chart
+// Pages per visit chart
 innerCharts.convChart = dc.barChart('#bar');
 
 innerCharts.convChart
