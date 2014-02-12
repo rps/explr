@@ -161,7 +161,7 @@ innerCharts.convChart
   .margins(marginSetting)
   .dimension(convDim)
   .group(partyTotal)  
-  .gap(4)
+  .gap(8)
   .renderHorizontalGridLines(true)
   .x(d3.scale.ordinal().domain([1,2,3,4,5,6,7]))
   .xUnits(dc.units.ordinal)
@@ -169,7 +169,7 @@ innerCharts.convChart
   .yAxisLabel('Visitors') 
   .yAxis().tickFormat(d3.format('s'));
 
-innerCharts.convChart.xAxis().ticks(14);
+innerCharts.convChart.xAxis().ticks(7);
 
 // Render all charts
 dc.renderAll();
