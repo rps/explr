@@ -161,7 +161,7 @@ innerCharts.convChart
   .margins(marginSetting)
   .dimension(convDim)
   .group(partyTotal)  
-  .gap(2)
+  .gap(4)
   .renderHorizontalGridLines(true)
   .x(d3.scale.ordinal().domain([1,2,3,4,5,6,7]))
   .xUnits(dc.units.ordinal)
