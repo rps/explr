@@ -104,7 +104,7 @@ innerCharts.sourceChart
   .group(trafficTotal)
   .colors(colorScale)
   .innerRadius(30)
-  .slicesCap(5)
+  .slicesCap(6)
   .on('preRender', function(chart){
     totalPie = calcTotal(chart);
   })
