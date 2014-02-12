@@ -162,7 +162,7 @@ innerCharts.convChart
   .dimension(convDim)
   .group(partyTotal)  
   .renderHorizontalGridLines(true)
-  .x(d3.scale.ordinal().domain([1,2,3,4,5,6,7,8,9,10]))
+  .x(d3.scale.ordinal().domain([1,2,3,4,5,6,7]))
   .xUnits(dc.units.ordinal)
   .elasticY(true)
   .yAxisLabel('Visitors') 
